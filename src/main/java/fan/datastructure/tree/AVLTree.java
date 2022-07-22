@@ -43,7 +43,7 @@ public class AVLTree {
             // 如果左子树与右子树的高度差大于1，则需要进行平衡调整，这里使用左子树的高度减右子树的高度，节点为空高度为-1
             if (getHeight(avlTreeNode.leftChild) - getHeight(avlTreeNode.rightChild) > 1) {
                 // 如果插入的值小于当前节点（即失衡节点）的左子节点的值，即插入的节点在失衡节点的左子节点的左边，则进行LL型旋转
-                if (val < avlTreeNode.leftChild.leftChild.data) {
+                if (val < avlTreeNode.leftChild.data) {
                     System.out.println("LL型旋转");
                     avlTreeNode = LLRotate(avlTreeNode);
                 } else { // 如果插入的值不小于当前节点（即失衡节点）的左子节点的值，即插入的节点在失衡节点的左子节点的右边，则进行LR型旋转
@@ -56,8 +56,8 @@ public class AVLTree {
             // 平衡调整
             if (getHeight(avlTreeNode.rightChild) - getHeight(avlTreeNode.leftChild) > 1){
                 // 如果插入的值小于等于当前节点（即失衡节点）的右子节点的值，即插入的节点在失衡节点的右子节点的左边，则进行RL型旋转
-                if (val <= avlTreeNode.rightChild.data){
-                    System.out.println("RL型旋转");
+                if (val < avlTreeNode.rightChild.data){
+                    System.out.println("RL型旋转" + avlTreeNode.data);
                     avlTreeNode = RLRotate(avlTreeNode);
                 } else { // 如果插入的值大于当前节点（即失衡节点）的右子节点的值，即插入的节点在失衡节点的右子节点的右边，则进行RR型旋转
                     System.out.println("RR型旋转");

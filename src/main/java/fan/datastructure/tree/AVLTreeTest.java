@@ -5,15 +5,15 @@ import org.springframework.util.StopWatch;
 public class AVLTreeTest {
     public static void main(String[] args) {
         AVLTree avlTree = new AVLTree();
-        avlTree.root = avlTree.insert(avlTree.root, 20);
-        avlTree.root = avlTree.insert(avlTree.root, 10);
         avlTree.root = avlTree.insert(avlTree.root, 30);
-        avlTree.root = avlTree.insert(avlTree.root, 25);
+        avlTree.root = avlTree.insert(avlTree.root, 20);
         avlTree.root = avlTree.insert(avlTree.root, 40);
+        avlTree.root = avlTree.insert(avlTree.root, 15);
+        avlTree.root = avlTree.insert(avlTree.root, 25);
         avlTree.printTree(avlTree.root);
         System.out.println();
 
-        avlTree.root = avlTree.insert(avlTree.root, 28);
+        avlTree.root = avlTree.insert(avlTree.root, 20);
         avlTree.printTree(avlTree.root);
         System.out.println();
 
